@@ -1,0 +1,3 @@
+[submodule "pm-guide"]
+	path = pm-guide
+	url = https://github.com/daniellefaithharris97/pm-guide.git
