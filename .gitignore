@@ -127,3 +127,6 @@ Thumbs.db
 
 # Kubernetes secrets (if any)
 secrets/
+
+# Documentation files (keep local, exclude from repo)
+pm-guide/
