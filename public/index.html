@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Feedback Tool</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Internal Feedback Tool</h1>
+            <p>Share your feedback with the CS team</p>
+        </header>
+
+        <!-- Feedback Submission Form -->
+        <section class="feedback-form">
+            <h2>Submit Feedback</h2>
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="feedbackText">Your Feedback:</label>
+                    <textarea 
+                        id="feedbackText" 
+                        name="feedback" 
+                        placeholder="Share your thoughts, concerns, or suggestions..."
+                        maxlength="2500"
+                        required
+                    ></textarea>
+                    <div class="char-counter">
+                        <span id="charCount">0</span>/500 words
+                    </div>
+                </div>
+                <button type="submit" id="submitBtn">Submit Feedback</button>
+            </form>
+        </section>
+
+        <!-- Feedback List Section -->
+        <section class="feedback-list-section">
+            <div class="list-header">
+                <h2>Previous Feedback</h2>
+                <button id="summarizeBtn" class="summarize-btn">Summarize</button>
+            </div>
+            
+            <div id="feedbackList" class="feedback-list">
+                <!-- Feedback items will be dynamically inserted here -->
+            </div>
+            
+            <div id="summarySection" class="summary-section" style="display: none;">
+                <h3>AI Summary</h3>
+                <div id="summaryContent" class="summary-content">
+                    <!-- Summary will be displayed here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading and Error Messages -->
+        <div id="loadingIndicator" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <span>Processing...</span>
+        </div>
+
+        <div id="errorMessage" class="error-message" style="display: none;">
+            <!-- Error messages will be displayed here -->
+        </div>
+
+        <div id="successMessage" class="success-message" style="display: none;">
+            <!-- Success messages will be displayed here -->
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
