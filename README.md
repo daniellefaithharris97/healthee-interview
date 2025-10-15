@@ -93,7 +93,12 @@ healthee-interview/
 │   └── js/                 # JavaScript files
 ├── data/                   # SQLite database files
 ├── tasks/                  # Project documentation
-└── scripts/                # Utility scripts
+├── scripts/                # Utility scripts
+│   ├── init-db.js         # Database initialization
+│   └── setup.sh           # Project setup
+├── package.json            # Dependencies and scripts
+├── README.md              # This file
+└── .gitignore             # Git ignore rules
 ```
 
 ### Available Scripts
@@ -124,29 +129,23 @@ CREATE TABLE feedback (
 
 ## Deployment
 
-### Docker
+### Simple Server Deployment
 
-1. **Build the image:**
+1. **Clone and setup:**
    ```bash
-   docker build -t internal-feedback-tool .
+   git clone https://github.com/daniellefaithharris97/healthee-interview.git
+   cd healthee-interview
+   npm install
+   npm run init-db
    ```
 
-2. **Run the container:**
+2. **Start the application:**
    ```bash
-   docker run -p 3000:3000 internal-feedback-tool
+   npm start
    ```
 
-### Kubernetes
-
-1. **Apply Kubernetes manifests:**
-   ```bash
-   kubectl apply -f k8s/
-   ```
-
-2. **Check deployment status:**
-   ```bash
-   kubectl get pods -n feedback-tool
-   ```
+3. **Access the tool:**
+   Open `http://your-server:3000` in a web browser
 
 ## Configuration
 
